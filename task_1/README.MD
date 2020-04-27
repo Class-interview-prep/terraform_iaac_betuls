@@ -1,7 +1,12 @@
-Create instance type of t2.large in oregon region with bastion hosts key attached to it. Create 2 security groups: 
+TASK 1
+
+Create instance type of t2.large in oregon region with bastion hosts key attached to it. 
+
+Create 2 security groups: 
 allows ssh  
 allows http   and https  
  
+
 Attach those sec groups to instance. Use simple userdata for installing httpd on the instance. You can learn more about userdata from below link 
 https://www.terraform.io/docs/providers/aws/r/instance.html 
  
@@ -19,11 +24,5 @@ it should have above instance IP address.
   
 https://www.terraform.io/docs/providers/aws/r/route53_record.html 
  
-Once: 
-instance 
-ssh public key 
-sec group 
-route53 created,  
- 
-Take a snaphost of the www.YOURDOMAIN.com   output to a slack channel  
- 
+
+
