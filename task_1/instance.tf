@@ -6,6 +6,8 @@ resource "aws_instance" "web" {
   key_name  =  "${aws_key_pair.us-west-2-key.key_name}"
   security_groups = ["${aws_security_group.allow_task1.name}"]
   user_data = "${file("install_apache.sh")}"
+ 
+
 
   tags = {
     Name = "Task1"
