@@ -7,8 +7,6 @@ resource "aws_instance" "web" {
   security_groups = ["${aws_security_group.allow_task1.name}"]
   user_data = "${file("install_apache.sh")}"
  
-
-
   tags = {
     Name = "Task1"
   }
