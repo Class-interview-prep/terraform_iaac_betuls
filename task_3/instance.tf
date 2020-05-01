@@ -7,14 +7,6 @@ resource "aws_instance" "task3" {
   source_dest_check = false
   key_name  =  "${aws_key_pair.us-east-2-key.key_name}"
   user_data = "${file("apache.sh")}"
-  
-  
-  tags = {
-    Name = "Task3"
-      Department = "${var.Department}"
-      Environment = "${var.Environment}"
-      Team = "${var.Team}"
-      Created_by = "${var.Created_by}"
-
-  }
+  tags = "${var.tags}"
+   
 }

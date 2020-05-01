@@ -1,3 +1,22 @@
+output "public_subnets"{
+    value = [
+        "${aws_subnet.dev1.id}          ${aws_subnet.dev1.cidr_block}      ${aws_subnet.dev1.availability_zone}",
+         "${aws_subnet.dev1.id}         ${aws_subnet.dev2.cidr_block}      ${aws_subnet.dev2.availability_zone}",
+        "${aws_subnet.dev3.id}          ${aws_subnet.dev3.cidr_block}      ${aws_subnet.dev3.availability_zone}"
+    ]
+}
+
+output "private_subnets"{
+    value = [
+        "${aws_subnet.dev_private1.id}      ${aws_subnet.dev_private1.cidr_block}   ${aws_subnet.dev_private1.availability_zone}",
+         "${aws_subnet.dev_private2.id}     ${aws_subnet.dev_private2.cidr_block}   ${aws_subnet.dev_private2.availability_zone}",
+        "${aws_subnet.dev_private3.id}      ${aws_subnet.dev_private3.cidr_block}   ${aws_subnet.dev_private3.availability_zone}"
+    ]
+}
+
+
+
+
 output "key_pair"{
     value = "${aws_key_pair.us-east-2-key.key_name}"
 }
@@ -21,30 +40,6 @@ output "sec_group_vpc_id"{
 
 output "vpc_cidr_block "{
     value = "${aws_vpc.dev.cidr_block}"
-}
-
-output "public1_subnet_id "{
-    value = "${aws_subnet.dev1.id}"
-}
-
-output "public2_subnet_id "{
-    value = "${aws_subnet.dev2.id}"
-}
-
-output "public3_subnet_id "{
-    value = "${aws_subnet.dev3.id}"
-}
-
-output "private1_subnet_id "{
-    value = "${aws_subnet.dev_private1.id}"
-}
-
-output "private2_subnet_id "{
-    value = "${aws_subnet.dev_private1.id}"
-}
-
-output "private3_subnet_id "{
-    value = "${aws_subnet.dev_private1.id}"
 }
 
 output "aws_internet_gateway_id "{

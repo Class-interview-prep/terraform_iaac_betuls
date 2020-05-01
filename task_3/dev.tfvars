@@ -1,9 +1,15 @@
 # Provide a region for VPC
 
-environment =   "ohio"
 region      =   "us-east-2"
+regin_name  =   "Ohio"
 ami = "ami-0f7919c33c90f5b58"
 
+
+# Avaliable Zone 
+
+az1 = "a"
+az2 = "b"
+az3 = "c"
 
 
 # This is used for VPC CIDR BLOCK 
@@ -26,7 +32,10 @@ cidr_block3_private = "10.0.103.0/24"
 
 # Tags
 
-Environment = "Dev"
-Department = "IT"
-Team       = "Infrastructure"
-Created_by = "Betul Akman"
+tags = {
+    Name = "Vpc_Project"
+    Environment = "Dev"
+    Department = "IT"
+    Team       = "DevOps"
+    Created_by = "Betul Akman"
+}

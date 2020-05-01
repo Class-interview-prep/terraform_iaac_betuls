@@ -3,6 +3,7 @@ resource "aws_security_group" "allow_task3" {
   description = "Allow TLS inbound traffic"
 
   vpc_id = "${aws_vpc.dev.id}" 
+  tags = "${var.tags}"
  
   
 
@@ -35,13 +36,5 @@ resource "aws_security_group" "allow_task3" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "Task3"
-      Department = "${var.Department}"
-      Environment = "${var.Environment}"
-      Team = "${var.Team}"
-      Created_by = "${var.Created_by}"
   }
 }
