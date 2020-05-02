@@ -23,3 +23,5 @@ variable "cidr_block3_private" {}
 variable "tags" {
     type = "map" 
 }
+
+variable "peer_owner_id" {}
